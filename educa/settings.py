@@ -18,12 +18,13 @@ SECRET_KEY = "django-insecure-o@y-ujw*8k&hv%2np5r0r118kl)kz@6)sjczc3$$=o&ifp)+z)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "students.apps.StudentsConfig",
     "courses.apps.CoursesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
