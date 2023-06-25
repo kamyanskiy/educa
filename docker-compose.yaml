@@ -1,5 +1,11 @@
 version: "3.9"
 services:
+  memcached:
+    platform: linux/arm64
+    image: arm64v8/memcached
+    ports:
+      - 11211:11211
+
   db:
     image: postgres:14.0-alpine
     ports:
