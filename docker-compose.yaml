@@ -6,6 +6,12 @@ services:
     ports:
       - 11211:11211
 
+  redis:
+    platform: linux/amd64
+    image: redis:7.0.4-alpine
+    ports:
+      - 6379:6379
+
   db:
     image: postgres:14.0-alpine
     ports:

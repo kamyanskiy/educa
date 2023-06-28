@@ -23,6 +23,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "chat.apps.ChatConfig",
     "students.apps.StudentsConfig",
     "courses.apps.CoursesConfig",
     "django.contrib.admin",
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     "embed_video",
     "debug_toolbar",
     "rest_framework",
+    "channels",
 ]
 
 REST_FRAMEWORK = {
@@ -157,3 +159,13 @@ CACHES = {
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+ASGI_APPLICATION = "educa.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
